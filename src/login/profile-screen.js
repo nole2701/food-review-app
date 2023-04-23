@@ -11,10 +11,10 @@ function ProfileScreen() {
     const save = () => {
       dispatch(updateUserThunk(profile));
     };
-    useEffect(async () => {
-      const { payload } = await dispatch(profileThunk());
-      setProfile(payload);
-    }, []);
+    // useEffect(async () => {
+    //   const { payload } = await dispatch(profileThunk());
+    //   setProfile(payload);
+    // }, []);
   return (
     <div>
       <h1>Profile Screen</h1>
