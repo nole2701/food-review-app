@@ -4,6 +4,8 @@ import "./App.css";
 import Navbar from "./navigation/navbar";
 import Search from "./search";
 import Home from "./home";
+import LoginScreen from "./login/login-screen";
+import ProfileScreen from "./login/profile-screen";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search />} />
+          <Route path="/profile" element={<ProfileScreen />} />
+          <Route path="/login" element={<LoginScreen />} />
         </Routes>
       </Router>
     </div>

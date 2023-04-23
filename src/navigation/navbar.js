@@ -48,6 +48,20 @@ const Navbar = ({ active }) => {
                 Search
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink
+                tag={Link}
+                exact
+                to="/profile"
+                className={({ isActive }) =>
+                  isActive ? "nav-link text-danger" : "nav-link text-white"
+                }
+                href="#"
+              >
+                <i className="bi bi-person-fill me-2"></i>
+                Profile
+              </NavLink>
+            </li>
           </ul>
         </div>
 

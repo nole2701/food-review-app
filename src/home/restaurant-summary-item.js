@@ -24,7 +24,7 @@ const RestaurantSummaryItem = ({
           <p className="card-text">{restaurant.summary}</p>
           <p className="card-text">{restaurant.rating} ☆</p>
           <a href="#" className="btn btn-success">
-            See menu
+            See Reviews
           </a>
         </div>
       </div>
