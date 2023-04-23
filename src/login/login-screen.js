@@ -5,8 +5,8 @@ import { useDispatch } from "react-redux";
 function LoginScreen() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
+  //   const navigate = useNavigate();
+  //   const dispatch = useDispatch();
   //   const handleLogin = async () => {
   //     try {
   //       await dispatch(loginThunk({ username, password }));

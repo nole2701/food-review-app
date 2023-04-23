@@ -10,6 +10,7 @@ const Home = () => {
         src="/images/neu campus.png"
         width="100%"
         height="450px"
+        alt="NEU Campus"
       ></img>
       <h1 className="mt-3">Featured:</h1>
       <hr style={{ margin: 20 }} />

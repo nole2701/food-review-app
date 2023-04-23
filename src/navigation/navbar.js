@@ -6,7 +6,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "./navbar.css";
 import { NavLink, Link } from "react-router-dom";
 
-const Navbar = ({ active }) => {
+const Navbar = () => {
   return (
     <div>
       <nav className="navbar navbar-expand navbar-black bg-black ps-5 pe-5 justify-content-around">
@@ -71,7 +71,7 @@ const Navbar = ({ active }) => {
           </button>
         </form>
       </nav>
-      <div clasName="list-group"></div>
+      <div className="list-group"></div>
     </div>
   );
 };
