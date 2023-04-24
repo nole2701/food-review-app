@@ -5,7 +5,7 @@ const RestaurantSummaryItem = ({
   restaurant = {
     name: "Restaurant",
     image: "default-restaurant.png",
-    cuisine: "Chicken, Fast Food, Sandwiches",
+    cuisine: "Food",
     avgRating: 0,
   },
 }) => {

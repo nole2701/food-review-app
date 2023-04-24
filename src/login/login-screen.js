@@ -4,8 +4,8 @@ import { useDispatch } from "react-redux";
 // import { loginThunk } from "../services/auth-thunks"; // Add a login thunk
 import "./login.css";
 function LoginScreen() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  // const [username, setUsername] = useState("");
+  // const [password, setPassword] = useState("");
   //   const navigate = useNavigate();
   //   const dispatch = useDispatch();
   //   const handleLogin = async () => {
@@ -24,8 +24,8 @@ function LoginScreen() {
         <input
           className="form-control"
           type="text"
-          value={username}
-          onChange={(event) => setUsername(event.target.value)}
+          // value={username}
+          // onChange={(event) => setUsername(event.target.value)}
         />
       </div>
       <div>
@@ -33,8 +33,8 @@ function LoginScreen() {
         <input
           className="form-control"
           type="password"
-          value={password}
-          onChange={(event) => setPassword(event.target.value)}
+          // value={password}
+          // onChange={(event) => setPassword(event.target.value)}
         />
       </div>
       <button>Login</button>
