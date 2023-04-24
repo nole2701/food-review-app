@@ -6,10 +6,10 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "./navbar.css";
 import { NavLink, Link } from "react-router-dom";
 
-const Navbar = ({ active }) => {
+const Navbar = () => {
   return (
     <div>
-      <nav className="navbar navbar-expand navbar-black bg-black ps-5 pe-5 justify-content-around">
+      <nav className="navbar navbar-expand fixed-top navbar-black bg-black ps-5 pe-5 justify-content-around">
         <Link to="/" className="navbar-brand align-top text-white" href="#">
           <img
             className="me-2 align-top d-inline-block"

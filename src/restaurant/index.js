@@ -1,23 +1,22 @@
 import React from "react";
-import "./home.css";
-import RestaurantSummaryList from "./restaurant-summary-list";
+import RestaurantPage from "./restaurant-page";
 
-const Home = () => {
+const Restaurant = () => {
   return (
-    <div className="home-body">
+    <div>
       <img
         className="home-image"
         src="/images/neu campus.png"
         width="100%"
         height="450px"
-        alt="NEU Campus"
       ></img>
-      <h1 className="mt-3">Featured:</h1>
+      {/*<h1 className="mt-3">Popeyes</h1>*/}
       <hr style={{ margin: 20 }} />
       <div className="container">
-        <RestaurantSummaryList />
+        <RestaurantPage />
+        {/*<RestaurantSummaryList />*/}
       </div>
     </div>
   );
 };
-export default Home;
+export default RestaurantPage;
