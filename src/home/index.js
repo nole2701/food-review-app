@@ -4,7 +4,7 @@ import RestaurantSummaryList from "./restaurant-summary-list";
 
 const Home = () => {
   return (
-    <div>
+    <div className="home-body">
       <img
         className="home-image"
         src="/images/neu campus.png"

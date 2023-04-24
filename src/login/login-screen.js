@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { useDispatch } from "react-redux";
 // import { loginThunk } from "../services/auth-thunks"; // Add a login thunk
+import "./login.css";
 function LoginScreen() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -16,7 +17,7 @@ function LoginScreen() {
   //     }
   //   };
   return (
-    <div>
+    <div className="login-body">
       <h1>Login Screen</h1>
       <div>
         <label>Username</label>

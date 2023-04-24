@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
+import "./login.css";
 // import { profileThunk, logoutThunk, updateUserThunk } // Add profile, logout, and updateUser thunks
 //     from "../services/auth-thunks";
 function ProfileScreen() {
@@ -16,7 +17,7 @@ function ProfileScreen() {
   //     setProfile(payload);
   //   }, []);
   return (
-    <div>
+    <div className="profile-body">
       <h1>Profile Screen</h1>
       <div>
         <div>
