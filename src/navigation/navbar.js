@@ -66,12 +66,14 @@ const Navbar = ({ active }) => {
         </div>
 
         <form className="form-inline">
+          <Link to="/login">
           <button className="btn btn-primary" type="submit">
             Log-In
           </button>
+          </Link>
         </form>
       </nav>
-      <div clasName="list-group"></div>
+      <div className="list-group"></div>
     </div>
   );
 };

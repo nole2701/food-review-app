@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { useDispatch } from "react-redux";
-// import { loginThunk } from "../services/auth-thunks"; // Add a login thunk
+import { loginThunk } from "../services/auth-thunks"; // Add a login thunk
 function LoginScreen() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  //   const handleLogin = async () => {
-  //     try {
-  //       await dispatch(loginThunk({ username, password }));
-  //       navigate("/profile");
-  //     } catch (e) {
-  //       alert(e);
-  //     }
-  //   };
+    const handleLogin = async () => {
+      try {
+        await dispatch(loginThunk({ username, password }));
+        navigate("/profile");
+      } catch (e) {
+        alert(e);
+      }
+    };
   return (
     <div>
       <h1>Login Screen</h1>
@@ -36,7 +36,7 @@ function LoginScreen() {
           onChange={(event) => setPassword(event.target.value)}
         />
       </div>
-      <button>Login</button>
+      <button onClick={handleLogin}>Login</button>
     </div>
   );
 }
