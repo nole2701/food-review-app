@@ -1,4 +1,6 @@
 import React from "react";
+import { Provider } from "react-redux";
+import { configureStore } from '@reduxjs/toolkit';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./navigation/navbar";
@@ -10,12 +12,14 @@ import Restaurant from "./restaurant";
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import restaurantsReducer from "./reducers/restaurants-reducer";
+import authReducer from "./reducers/auth-reducer";
 const store = configureStore({
-  reducer: { restaurants: restaurantsReducer },
+  reducer: { user: authReducer, restaurants: restaurantsReducer },
 });
 
 function App() {
   return (
+    <Provider store={store}>
     <div className="App">
       <Provider store={store}>
         <Router>
@@ -30,6 +34,7 @@ function App() {
         </Router>
       </Provider>
     </div>
+    </Provider>
   );
 }
 

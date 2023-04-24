@@ -66,15 +66,11 @@ const Navbar = () => {
         </div>
 
         <form className="form-inline">
-          <NavLink
-            tag={Link}
-            exact
-            to="/login"
-            className="btn btn-primary"
-            type="submit"
-          >
+          <Link to="/login">
+          <button className="btn btn-primary" type="submit">
             Log-In
-          </NavLink>
+          </button>
+          </Link>
         </form>
       </nav>
       <div className="list-group"></div>
