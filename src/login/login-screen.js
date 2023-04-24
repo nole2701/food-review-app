@@ -24,8 +24,8 @@ function LoginScreen() {
         <input
           className="form-control"
           type="text"
-          // value={username}
-          // onChange={(event) => setUsername(event.target.value)}
+          value={username}
+          onChange={(event) => setUsername(event.target.value)}
         />
       </div>
       <div>
@@ -33,8 +33,8 @@ function LoginScreen() {
         <input
           className="form-control"
           type="password"
-          // value={password}
-          // onChange={(event) => setPassword(event.target.value)}
+          value={password}
+          onChange={(event) => setPassword(event.target.value)}
         />
       </div>
       <button onClick={handleLogin}>Login</button>
