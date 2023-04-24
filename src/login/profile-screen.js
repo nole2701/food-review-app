@@ -12,8 +12,7 @@ function ProfileScreen() {
       dispatch(updateUserThunk(profile));
     };
     // useEffect(async () => {
-    //   const { payload } = await dispatch(profileThunk());
-    //   setProfile(payload);
+    //   setProfile(await dispatch(profileThunk()));
     // }, []);
   return (
     <div>
@@ -55,6 +54,27 @@ function ProfileScreen() {
         }}>
         Logout</button>
       <button onClick={save}>Save</button>
+
+      <div>
+          <b><span>Username: </span></b>
+          {profile.username}
+        </div>
+        <div>
+        <b><span>Date of Birth: </span></b>
+          {profile.dob}
+        </div>
+        <div>
+        <b><span>Account Creation Date: </span></b>
+          {profile.createdAt.split("T")[0]}
+        </div>
+        <div>
+        <b><span>Restaurant Owner: </span></b>
+          {profile.restaurantOwner ? "No" : "Yes"}
+        </div>
+        <div><br></br>
+        <b><span>About Me: </span></b><br></br>
+          {profile.about}
+        </div>
     </div>
   );
   // see below
