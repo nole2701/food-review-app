@@ -1,7 +1,7 @@
 import React from "react";
-import RestaurantItem from "./RestaurantItem";
+import RestaurantPage from "./restaurant-page";
 
-const RestaurantPage = () => {
+const Restaurant = () => {
   return (
     <div>
       <img
@@ -13,7 +13,7 @@ const RestaurantPage = () => {
       {/*<h1 className="mt-3">Popeyes</h1>*/}
       <hr style={{ margin: 20 }} />
       <div className="container">
-        <RestaurantItem />
+        <RestaurantPage />
         {/*<RestaurantSummaryList />*/}
       </div>
     </div>
