@@ -72,9 +72,21 @@ function ProfileScreen() {
         <b><span>Restaurant Owner: </span></b>
           {profile.restaurantOwner ? "No" : "Yes"}
         </div>
-        <div><br></br>
+        <div className="form-group justify-content-center row"><br></br>
+        <div className="col-6">
         <b><span>About Me: </span></b><br></br>
-          {profile.about}
+        <textarea className="form-control input-lg"
+            type="text"
+            value={profile.about}
+              onChange={(event) => {
+                const newProfile = {
+                  ...profile,
+                  about: event.target.value,
+                };
+                setProfile(newProfile);
+              }}
+          />
+          </div>
         </div>
     </div>
   );
