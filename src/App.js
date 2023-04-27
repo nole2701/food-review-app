@@ -8,9 +8,9 @@ import Search from "./search";
 import Home from "./home";
 import LoginScreen from "./login/login-screen";
 import ProfileScreen from "./login/profile-screen";
-import Restaurant from "./restaurant";
 import restaurantsReducer from "./reducers/restaurants-reducer";
 import authReducer from "./reducers/auth-reducer";
+import RestaurantPage from "./restaurant/restaurant-page";
 const store = configureStore({
   reducer: { user: authReducer, restaurants: restaurantsReducer },
 });
@@ -25,9 +25,9 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/search" element={<Search />} />
-              <Route path="/profile" element={<ProfileScreen />} />
+              <Route path="/profile/:uid" element={<ProfileScreen />} />
               <Route path="/login" element={<LoginScreen />} />
-              <Route path="/restaurant" element={<Restaurant />} />
+              <Route path="/restaurant/:resId" element={<RestaurantPage />} />
             </Routes>
           </Router>
         </Provider>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./home.css";
 
 const RestaurantSummaryItem = ({
@@ -25,9 +26,11 @@ const RestaurantSummaryItem = ({
           <h5 className="card-title">{restaurant.name}</h5>
           <p className="card-text">{restaurant.cuisine}</p>
           <p className="card-text">{restaurant.avgRating} ☆</p>
-          <a href="#" className="btn btn-success">
-            See Reviews
-          </a>
+          <Link to={`/restaurant/${restaurant._id}`}>
+            <a href="#" className="btn btn-success">
+              See Reviews
+            </a>
+          </Link>
         </div>
       </div>
     </div>
