@@ -1,0 +1,9 @@
+.restaurant-body {
+  margin-top: 100px;
+}
+
+.restaurant-image {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}

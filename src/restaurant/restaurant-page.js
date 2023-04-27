@@ -1,70 +1,55 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { findRestaurantById } from "../services/restaurants-service";
+import "./restaurant.css";
+import Reviews from "./reviews";
 
-const RestaurantPage = ({
-  restaurant = {
-    id: "1",
-    name: "ExampleRestaurant",
-    image: "/images/default-restaurant.png",
-    cuisine: "Test",
-    rating: "0",
-  },
-}) => {
-  //const dispatch = useDispatch();
+const RestaurantPage = () => {
+  const { resId } = useParams();
+  const [restaurant, setRestaurant] = useState({});
+  useEffect(() => {
+    findRestaurantById(resId).then((restaurant) => setRestaurant(restaurant));
+  }, [resId]);
   return (
-    <div className="row">
-      <div className="row">
-        <div className="col-2">
-          <img
-            src={restaurant.image}
-            alt={restaurant.name}
-            className="restaurant-image"
-          />
-        </div>
-
-        <div className="col-2">
-          <div className="col-xl-12">
-            <h2 className="restaurant-name">{restaurant.name}</h2>
-            <div className="col-xl-12">Summary: {restaurant.summary}</div>
-          </div>
-          <div className="restaurant-rating">Rating: ★{restaurant.rating}</div>
-        </div>
+    <div className="container restaurant-body border p-4 rounded text-start">
+      <img
+        src={`/images/${restaurant.image}`}
+        onError={({ target }) => {
+          target.onerror = null;
+          target.src = "/images/default-restaurant.png";
+        }}
+        maxHeight="600px"
+        className="restaurant-image rounded"
+        alt={restaurant.name}
+      />
+      <div className="card-body">
+        <h1 className="">{restaurant.name}</h1>
+        <h3 className="">{restaurant.cuisine}</h3>
       </div>
 
-      {/*    <div className="restaurant-details">*/}
-      {/*    */}
+      <div className="restaurant-details">
+        <p className="card-text">
+          <strong>Address:</strong> {restaurant.address}
+        </p>
+        <p className="card-text">
+          <strong>Hours:</strong> {restaurant.openingHours}
+        </p>
+        <p className="card-text">{restaurant.description}</p>
+      </div>
 
-      {/*</div>*/}
-      {/*    */}
-
-      {/*    <p className="restaurant-summary">{restaurant.summary}</p>*/}
-      {/*    <div className="restaurant-rating">*/}
-      {/*        <span className="rating-stars">★</span>*/}
-      {/*        <span className="rating-number">{restaurant.rating}</span>*/}
-      {/*    </div>*/}
+      <hr />
+      <div className="restaurant-rating">
+        <p className="card-text">
+          Current rating: {Math.round(restaurant.avgRating * 10) / 10} ☆ (
+          {restaurant.numReviews} ratings)
+        </p>
+        <span className="rating-number">{restaurant.rating}</span>
+      </div>
+      <div>
+        <h3>Reviews</h3>
+        <Reviews />
+      </div>
     </div>
   );
 };
-//     return (
-//         <div className="p-3 col">
-//             <h1>{restaurant.name}</h1>
-//             <img
-//                 src={restaurant.image}
-//                 className="card-img-top"
-//                 alt={restaurant.name}
-//             />
-//             {restaurant.summary}
-//             {/*<div className="card" style={{ width: "20em" }}>*/}
-//
-//             {/*    <div className="card-body">*/}
-//             {/*        <h5 className="card-title">{restaurant.name}</h5>*/}
-//             {/*        <p className="card-text">{restaurant.summary}</p>*/}
-//             {/*        <p className="card-text">{restaurant.rating} ☆</p>*/}
-//             {/*        <a href="#" className="btn btn-success">*/}
-//             {/*            See Reviews*/}
-//             {/*        </a>*/}
-//             {/*    </div>*/}
-//             {/*</div>*/}
-//         </div>
-//     );
-// };
 export default RestaurantPage;

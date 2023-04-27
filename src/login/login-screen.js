@@ -8,33 +8,38 @@ function LoginScreen() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
-    const handleLogin = async () => {
-      try {
-        await dispatch(loginThunk({ username, password }));
-        navigate("/profile");
-      } catch (e) {
-        alert(e);
-      }
-    };
+  const handleLogin = async () => {
+    try {
+      await dispatch(loginThunk({ username, password }));
+      navigate("/profile");
+    } catch (e) {
+      alert(e);
+    }
+  };
+
+  const handleKeypress = (e) => {
+    if (e.keyCode === 13) {
+      handleLogin();
+    }
+  };
   return (
     <div className="login-body">
       <h1>Login Screen</h1>
-      <div>
-        <label>Username</label>
+      <div className="m-2">
+        <label className="m-2">Username</label>
         <input
-          className="form-control"
           type="text"
           value={username}
           onChange={(event) => setUsername(event.target.value)}
         />
       </div>
-      <div>
-        <label>Password</label>
+      <div className="m-2">
+        <label className="m-2">Password</label>
         <input
-          className="form-control"
           type="password"
           value={password}
           onChange={(event) => setPassword(event.target.value)}
+          onKeyDown={handleKeypress}
         />
       </div>
       <button onClick={handleLogin}>Login</button>
