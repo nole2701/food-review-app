@@ -1,7 +1,8 @@
+// eslint-disable-next-line
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
-import "./login.css";
+import "./login.css"; // eslint-disable-next-line
 import { profileThunk, logoutThunk, updateUserThunk }
     from "../services/auth-thunks";
 function ProfileScreen() {
@@ -19,8 +20,8 @@ function ProfileScreen() {
     <div className="profile-body">
       <h1>Profile Screen</h1>
       <div>
-        <div>
-          <label>First Name</label>
+        <div className="m-2">
+          <label className="m-2">First Name</label>
           <input
             type="text"
             value={profile.firstName}
@@ -33,8 +34,8 @@ function ProfileScreen() {
               }}
           />
         </div>
-        <div>
-          <label>Last Name</label>
+        <div className="m-2">
+          <label className="m-2">Last Name</label>
           <input
             type="text"
             value={profile.lastName}
@@ -48,7 +49,7 @@ function ProfileScreen() {
           />
         </div>
       </div>
-      <button
+      <button className="m-2"
         onClick={() => {
           dispatch(logoutThunk());
           navigate("/login");
@@ -61,16 +62,12 @@ function ProfileScreen() {
           {profile.username}
         </div>
         <div>
-        <b><span>Date of Birth: </span></b>
-          {profile.dob}
-        </div>
-        <div>
         <b><span>Account Creation Date: </span></b>
           {profile.createdAt.split("T")[0]}
         </div>
         <div>
         <b><span>Restaurant Owner: </span></b>
-          {profile.restaurantOwner ? "No" : "Yes"}
+          {profile.isRestaurantOwner ? "Yes" : "No"}
         </div>
         <div className="form-group justify-content-center row"><br></br>
         <div className="col-6">

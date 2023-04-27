@@ -64,7 +64,14 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-
+        
+        <form className="form-inline m-3">
+          <Link to="/register">
+          <button className="btn btn-primary" type="submit">
+            Register
+          </button>
+          </Link>
+        </form>
         <form className="form-inline">
           <Link to="/login">
           <button className="btn btn-primary" type="submit">
