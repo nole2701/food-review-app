@@ -8,6 +8,7 @@ import Search from "./search";
 import Home from "./home";
 import LoginScreen from "./login/login-screen";
 import ProfileScreen from "./login/profile-screen";
+import RegisterScreen from "./login/register-screen";
 import Restaurant from "./restaurant";
 import restaurantsReducer from "./reducers/restaurants-reducer";
 import authReducer from "./reducers/auth-reducer";
@@ -27,6 +28,7 @@ function App() {
               <Route path="/search" element={<Search />} />
               <Route path="/profile" element={<ProfileScreen />} />
               <Route path="/login" element={<LoginScreen />} />
+              <Route path="/register" element={<RegisterScreen />} />
               <Route path="/restaurant" element={<Restaurant />} />
             </Routes>
           </Router>
