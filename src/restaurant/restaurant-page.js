@@ -1,19 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { findRestaurantByIdThunk } from "../services/restaurants-thunks";
 import { findRestaurantById } from "../services/restaurants-service";
 import "./restaurant.css";
+import Reviews from "./reviews";
 
 const RestaurantPage = () => {
   const { resId } = useParams();
   const [restaurant, setRestaurant] = useState({});
-  const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(findRestaurantByIdThunk(resId));
     findRestaurantById(resId).then((restaurant) => setRestaurant(restaurant));
   }, [resId]);
-  console.log(restaurant);
   return (
     <div className="container restaurant-body border p-4 rounded text-start">
       <img
@@ -48,6 +44,10 @@ const RestaurantPage = () => {
           {restaurant.numReviews} ratings)
         </p>
         <span className="rating-number">{restaurant.rating}</span>
+      </div>
+      <div>
+        <h3>Reviews</h3>
+        <Reviews />
       </div>
     </div>
   );

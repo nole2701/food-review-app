@@ -8,14 +8,20 @@ function LoginScreen() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
-    const handleLogin = async () => {
-      try {
-        await dispatch(loginThunk({ username, password }));
-        navigate("/profile");
-      } catch (e) {
-        alert(e);
-      }
-    };
+  const handleLogin = async () => {
+    try {
+      await dispatch(loginThunk({ username, password }));
+      navigate("/profile");
+    } catch (e) {
+      alert(e);
+    }
+  };
+
+  const handleKeypress = (e) => {
+    if (e.keyCode === 13) {
+      handleLogin();
+    }
+  };
   return (
     <div className="login-body">
       <h1>Login Screen</h1>
@@ -33,6 +39,7 @@ function LoginScreen() {
           type="password"
           value={password}
           onChange={(event) => setPassword(event.target.value)}
+          onKeyDown={handleKeypress}
         />
       </div>
       <button onClick={handleLogin}>Login</button>
