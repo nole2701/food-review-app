@@ -33,10 +33,14 @@ export const logout = async () => {
  };
  
  
- export const register = async ({ username, password }) => {
+ export const register = async ({ username, password, firstName, lastName, isRestaurantOwner, about }) => {
   const response = await api.post(`${USERS_URL}/register`, {
     username,
     password,
+    firstName,
+    lastName,
+    isRestaurantOwner,
+    about
   });
   const user = response.data;
   return user;
